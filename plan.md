@@ -9,7 +9,9 @@ Clean up `ComfyUIonColab.ipynb` so it installs ComfyUI correctly, installs Comfy
   - `WORKSPACE = "/root/comfy/ComfyUI"`
   - `CUSTOM_NODES_PATH = Path(WORKSPACE) / "custom_nodes"`
 - Replace the previous `comfy-cli` install attempt with direct, non-interactive setup:
-  - clone/update `https://github.com/comfyanonymous/ComfyUI.git`
+  - use `/root/comfy/ComfyUI` as the ComfyUI install directory
+  - clone/update `https://github.com/comfyanonymous/ComfyUI.git` when the directory is missing or is a git checkout
+  - accept an existing non-git ComfyUI install at `/root/comfy/ComfyUI` when `main.py` is present
   - install `requirements.txt`
   - fail early if `main.py` is missing
 - Install ComfyUI-Manager as required infrastructure:
